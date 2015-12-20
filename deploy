@@ -19,7 +19,7 @@ fi
 ACTION=${ACTION:-deploy-web}
 WEB_IMAGE=${WEB_IMAGE:-dickthedeployer/dick:latest}
 WORKER_IMAGE=${WORKER_IMAGE:-dickthedeployer/dick-worker:latest}
-WORKER_MEMORY=${WORKER_MEMORY:-512}
+WORKER_MEMORY=${WORKER_MEMORY:-512MB}
 WORKERS=${WORKERS:-2}
 PREFIX=${PREFIX:-dickthedeployer}
 DB_VOLUME_PATH="/etc/dickthedeployer/postgres"
