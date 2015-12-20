@@ -174,7 +174,7 @@ elif [ "$ACTION" = "remove-web" ]; then
     remove_db_volume
 
     echo "Done. If you want to remove database files also please run:"
-    echo " -> rm rf $DB_VOLUME_PATH"
+    echo " -> rm -rf $DB_VOLUME_PATH"
 
 
 elif [ "$ACTION" = "deploy-workers" ]; then
