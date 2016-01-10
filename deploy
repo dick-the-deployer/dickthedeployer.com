@@ -23,6 +23,7 @@ WORKER_MEMORY=${WORKER_MEMORY:-512M}
 WORKERS=${WORKERS:-2}
 PREFIX=${PREFIX:-dickthedeployer}
 DB_VOLUME_PATH="/etc/dickthedeployer/postgres"
+KEYS_VOLUME_PATH="/etc/dickthedeployer/keys"
 POSTGRES_PASSWORD=${DB_PASSWORD:-postgres}
 DICK_WEB_PROTOCOL=http
 DICK_WEB_PORT=${PORT:-8080}
@@ -49,6 +50,19 @@ remove_db_volume() {
     docker rm -fv $PREFIX-db-volume > /dev/null 2>&1
 }
 
+start_keys_volume() {
+    ID=$(docker run \
+        -ti \
+        -d \
+        -v $KEYS_VOLUME_PATH:/root/.ssh \
+        --name $PREFIX-keygen \
+        dickthedeployer/keygen)
+}
+
+remove_keys_volume() {
+    docker rm -fv $PREFIX-keygen > /dev/null 2>&1
+}
+
 start_postgres() {
     ID=$(docker run \
         -ti \
@@ -70,6 +84,7 @@ start_web() {
         -d \
         --link $PREFIX-postgres \
         --restart=always \
+        --volumes-from=$PREFIX-keygen \
         --name $PREFIX-web \
         -p $DICK_WEB_PORT:8080 \
         -e spring.datasource.url=jdbc:postgresql://$PREFIX-postgres:5432/postgres \
@@ -135,6 +150,8 @@ if [ "$ACTION" = "deploy-web" ]; then
     start_db_volume
     echo " -> Starting Database"
     start_postgres
+    echo " -> Starting Keys Volume"
+    start_keys_volume
     echo " -> Starting Web"
     start_web
 
@@ -168,6 +185,8 @@ elif [ "$ACTION" = "remove-web" ]; then
     echo "Removing Dick The Deployer"
     echo " -> Removing Web"
     remove_web
+    echo " -> Removing Keys Volume"
+    remove_keys_volume
     echo " -> Removing Database"
     remove_postgres
     echo " -> Removing Database Volume"
@@ -175,6 +194,8 @@ elif [ "$ACTION" = "remove-web" ]; then
 
     echo "Done. If you want to remove database files also please run:"
     echo " -> rm -rf $DB_VOLUME_PATH"
+    echo "If you want to remove keys also please run:"
+    echo " -> rm -rf $KEYS_VOLUME_PATH"
 
 
 elif [ "$ACTION" = "deploy-workers" ]; then
