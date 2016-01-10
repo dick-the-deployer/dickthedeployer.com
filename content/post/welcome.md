@@ -4,4 +4,4 @@ title = "welcome"
 
 +++
 
-Lorem ipusm
+Lorem ipusm 2
