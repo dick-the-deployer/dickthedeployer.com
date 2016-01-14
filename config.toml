@@ -1,4 +1,8 @@
 baseurl = "http://dickthedeployer.xyz"
 languageCode = "en-us"
-title = "My New"
+title = "Dick the Deployer"
 theme = "purehugo"
+
+[params]
+  githubName = "dick-the-deployer/dick"
+  description = "Dockerized Continuous Delivery"

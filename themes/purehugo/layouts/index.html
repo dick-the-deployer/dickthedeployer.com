@@ -4,35 +4,37 @@
     {{ partial "sidebar.html" . }}
 
     <div class="content pure-u-1 pure-u-md-3-4">
-        <div>
-            <!-- A wrapper for all the blog posts -->
-            <div class="posts">
-                {{ range .Paginator.Pages }}
-                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
-                <section class="post">
-                    <header class="post-header">
+        <h1>Dick the Deployer</h1>
+        <p><em>Dockerized Continuous Delivery</em></p>
 
-                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+        <p>Built on <a href="https://docs.docker.com">Docker</a>, Dick The Deployer gives you the ability to
+            implement easy and scalable Continuous Delivery.</p>
 
-                        <p class="post-meta">
-                            {{ with .Params.author }}
-                                By <strong class="post-author">{{ . }}</strong>
-                            {{ end }}
-                            {{ if isset .Params "categories" }}
-                                under 
-                                {{ $baseUrl := .Site.BaseURL }}
-                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
-                            {{ end }}
-                        </p>
-                    </header>
+        <p>Dick the Deployer differs from other continuous integration applications in that it promotes scalability and
+            is easy to adapt and maintain. Dick the Deployer performs pipelined builds using configuration stored
+            inside project repository, presenting results near-real time on clean UI.</p>
 
-                    <div class="post-description">
-                        {{ .Content }}
-                    </div>
-                </section>
-                {{ end }}
-            </div>
-            {{ partial "pagination.html" . }}
+        <img src="/images/dashboard.png"/>
+
+        <h1>User Interface</h1>
+        <p>The user interface is build around concepts familiar to every programmer, like groups and projects.
+            You can manage those projects and groups, browse builds history and observe progress on each defined
+            pipeline.</p>
+
+        <p>For details, see the <a href="/walkthrough">Walkthrough</a>.</p>
+
+        <h1>API</h1>
+        <p>Dick the Deployer ships with rich API enabling easy integration with existing tools.</p>
+
+        <h1>More Info</h1>
+        <p>See the <a href="/docs">Docs</a> for information on working with Dick the Deployer.</p>
+        <p>See the <a href="/docs/deploy">Deployment Guide</a> to get a Shipyard instance deployed.</p>
+
+        <h1>Help</h1>
+        If you run into issues, please don't hesitate to find help on <a
+            href="https://dickthedeployer.slack.com">Slack</a>
+        or via the <a href="https://github.com/dickthedeployer/dick">GitHub</a> project.
+
             {{ partial "footer.html" . }}
         </div>
     </div>

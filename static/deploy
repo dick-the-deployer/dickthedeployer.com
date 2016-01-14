@@ -4,6 +4,7 @@ if [ "$1" != "" ] && [ "$1" = "-h" ]; then
     echo "Dick The Deployer Deploy Script uses the following environment variables:"
     echo "  ACTION: this is the action to use (deploy-web, upgrade-web, remove-web, deploy-workers, upgrade-workers, remove-workers)"
     echo "  VERSION: version of docker images to use, default latest"
+    echo "  PORT: port to run web, default 8080"
     echo "  WORKER_MEMORY: this is the memory limit assigned to each worker, default 256M"
     echo "  WORKERS: this is the number of workers to create in deploy-workers action"
     echo "  PREFIX: this is the prefix used by all Dick The Deployer components"
