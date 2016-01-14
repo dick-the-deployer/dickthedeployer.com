@@ -3,6 +3,7 @@
 if [ "$1" != "" ] && [ "$1" = "-h" ]; then
     echo "Dick The Deployer Deploy Script uses the following environment variables:"
     echo "  ACTION: this is the action to use (deploy-web, upgrade-web, remove-web, deploy-workers, upgrade-workers, remove-workers)"
+    echo "  VERSION: version of docker images to use, default latest"
     echo "  WORKER_MEMORY: this is the memory limit assigned to each worker, default 256M"
     echo "  WORKERS: this is the number of workers to create in deploy-workers action"
     echo "  PREFIX: this is the prefix used by all Dick The Deployer components"
@@ -17,8 +18,9 @@ if [ -z "`which docker`" ]; then
 fi
 
 ACTION=${ACTION:-deploy-web}
-WEB_IMAGE=${WEB_IMAGE:-dickthedeployer/dick:latest}
-WORKER_IMAGE=${WORKER_IMAGE:-dickthedeployer/dick-worker:latest}
+DICK_VERSION=${VERSION:-latest}
+WEB_IMAGE=${WEB_IMAGE:-dickthedeployer/dick}
+WORKER_IMAGE=${WORKER_IMAGE:-dickthedeployer/dick-worker}
 WORKER_MEMORY=${WORKER_MEMORY:-512M}
 WORKERS=${WORKERS:-2}
 PREFIX=${PREFIX:-dickthedeployer}
@@ -89,7 +91,7 @@ start_web() {
         -p $DICK_WEB_PORT:8080 \
         -e spring.datasource.url=jdbc:postgresql://$PREFIX-postgres:5432/postgres \
         -e spring.datasource.password=$POSTGRES_PASSWORD \
-         dickthedeployer/dick:latest)
+         $WEB_IMAGE:$DICK_VERSION)
 }
 
 remove_web() {
@@ -112,7 +114,7 @@ start_workers() {
             --restart=always \
             --name $PREFIX-worker-$i \
             -e dick.web.url=$DICK_WEB_ADDRESS \
-            dickthedeployer/dick-worker:latest)
+            $WORKER_IMAGE:$DICK_VERSION)
     done
 }
 
@@ -167,8 +169,8 @@ elif [ "$ACTION" = "upgrade-web" ]; then
     get_ip
 
     echo "Upgrading Dick The Deployer"
-    echo " -> Pulling $WEB_IMAGE"
-    docker pull $WEB_IMAGE
+    echo " -> Pulling $WEB_IMAGE:$DICK_VERSION"
+    docker pull $WEB_IMAGE:$DICK_VERSION
 
     echo " -> Upgrading Controller"
     remove_web
@@ -217,8 +219,8 @@ elif [ "$ACTION" = "upgrade-workers" ]; then
     set -e
 
     echo "Upgrading Dick The Deployer Worker"
-    echo " -> Pulling $WORKER_IMAGE"
-    docker pull $WORKER_IMAGE
+    echo " -> Pulling $WORKER_IMAGE:$DICK_VERSION"
+    docker pull $WORKER_IMAGE:$DICK_VERSION
 
     echo " -> Upgrading Workers"
 
