@@ -1,6 +1,51 @@
 +++
 date = "2015-11-22T20:11:22+01:00"
-title = "Walkthrough"
+title = "Dick the Deployer Walkthrough"
 +++
 
-TODO
+This is an overview of Dick the Deployer.
+
+## Abstract
+
+Dick the Deployer organizes work in projects. Each project is based on certain repository and ref (for example `master`).
+The repository should contain `.dick.yml` file with the pipeline definition. You can read more about this file in 
+[dickfile](/docs/dickfile) section.
+
+## Projects
+
+The projects section provides a single view of all projects in the Dick the Deployer.
+You can see what is current status of each pipeline, when the build was started, 
+the last commit message and more. There is also several buttons allowing starting 
+pipeline manually, starting selected stage or restarting stage build.
+
+![Projects](/images/dashboard.png)
+
+## Builds
+
+The builds section provides history of pipelines for selected project. You can start (or restart) 
+any stage build of any pipeline run. There is also several information like commit message, build number 
+and when the build was started.
+
+![Projects](/images/builds.png)
+
+## Build
+
+The build section provides summary for certain build. You can monitor build progress of every job in selected stage, 
+including build output in near real time.
+
+![Projects](/images/output.png)
+
+
+## Settings
+
+The setting section provides several options for project management. You can edit ref, repository and environment variables.
+Using this section you can also rename, move or delete project.
+
+![Projects](/images/settings.png)
+
+## Groups
+
+The groups section presents groups available in Dick the Deployer.
+
+![Projects](/images/groups.png)
+
