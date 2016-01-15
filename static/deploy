@@ -41,6 +41,7 @@ get_ip() {
 }
 
 start_db_volume() {
+    docker pull postgres:latest
     ID=$(docker run \
         -ti \
         -d \
@@ -54,6 +55,7 @@ remove_db_volume() {
 }
 
 start_keys_volume() {
+    docker pull dickthedeployer/keygen
     ID=$(docker run \
         -ti \
         -d \
@@ -82,6 +84,7 @@ remove_postgres() {
 }
 
 start_web() {
+    docker pull $WEB_IMAGE:$DICK_VERSION
     ID=$(docker run \
         -ti \
         -d \
@@ -104,6 +107,7 @@ count_workers() {
 }
 
 start_workers() {
+    docker pull $WORKER_IMAGE:$DICK_VERSION
     SHOULD_RUN=`expr $RUNNING_WORKERS + $WORKERS - 1`
     for i in `seq $RUNNING_WORKERS $SHOULD_RUN`;
     do
