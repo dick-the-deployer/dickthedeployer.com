@@ -26,7 +26,6 @@ curl -s https://raw.githubusercontent.com/dick-the-deployer/dickthedeployer.com/
   ACTION: this is the action to use (deploy-web, upgrade-web, remove-web, deploy-workers, upgrade-workers, remove-workers)
   VERSION: version of docker images to use, default latest
   PORT: port to run web, default 8080
-  WORKER_MEMORY: this is the memory limit assigned to each worker, default 256M
   WORKERS: this is the number of workers to create in deploy-workers action
   PREFIX: this is the prefix used by all Dick The Deployer components
   DICK_WEB_ADDRESS: this is the Dick The Deployer Web addres used by workers to register in
