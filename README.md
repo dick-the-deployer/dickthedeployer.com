@@ -1,4 +1,4 @@
-# dickthedeployer.xyz
+# dickthedeployer.com
 
 ## Usage
 
