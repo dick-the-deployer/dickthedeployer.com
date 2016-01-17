@@ -13,13 +13,13 @@ Automated deployment will deploy Dick the Deployer using current Docker host.
 Once deployed, the script will output the URL to connect and command required to run some workers.
 
 ```bash
-curl https://raw.githubusercontent.com/dick-the-deployer/dickthedeployer.com/master/static/deploy | bash -s
+curl https://dickthedeployer.com/deploy | bash -s
 ```
 
 
 For full usage details:
 ```bash
-curl -s https://raw.githubusercontent.com/dick-the-deployer/dickthedeployer.com/master/static/deploy | bash -s -- -h
+curl -s https://dickthedeployer.com/deploy | bash -s -- -h
 ```
 
 ```bash
