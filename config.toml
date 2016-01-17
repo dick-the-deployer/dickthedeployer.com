@@ -5,4 +5,5 @@ theme = "purehugo"
 
 [params]
   githubName = "dick-the-deployer/dick"
+  slackName = "dickthedeployer"
   description = "Dockerized Continuous Delivery"

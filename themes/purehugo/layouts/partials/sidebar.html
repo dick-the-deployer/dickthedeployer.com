@@ -14,6 +14,7 @@
             <li><a href="/docs/deploy/">Deploy</a></li>
             <li><a href="/walkthrough">Walkthrough</a></li>
             <li><a href="/docs/dickfile/">Dickfile</a></li>
+            <li><a href="/docs/integrations/">Integrations</a></li>
             <li><a href="https://github.com/dick-the-deployer/dick">GitHub</a></li>
         </ul>
 
@@ -24,9 +25,15 @@
                     <a class="pure-button" href="https://twitter.com/{{ . }}"><i class="fa fa-twitter"></i> Twitter</a>
                 </li>
                 {{ end }}
+                {{ with .Site.Params.slackName }}
+                <li class="nav-item">
+                    <a class="pure-button" href="https://{{ . }}.slack.com"><i class="fa fa-slack"></i> slack</a>
+                </li>
+                {{ end }}
                 {{ with .Site.Params.githubName }}
                 <li class="nav-item">
-                    <a class="pure-button" href="https://github.com/{{ . }} "><i class="fa fa-github-alt"></i> github</a>
+                    <a class="pure-button" href="https://github.com/{{ . }} "><i class="fa fa-github-alt"></i>
+                        github</a>
                 </li>
                 {{ end }}
             </ul>
