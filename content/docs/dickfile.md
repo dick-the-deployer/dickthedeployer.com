@@ -4,10 +4,10 @@ title = "Dickfile"
 +++
 
 The instructions how to build project should be stored in project repository in a `.dick.yml` file. This design choice 
-allows configuration versioning and in the same time - quick setup.
+allows configuration versioning and quick setup at the same time.
 
 The dickfile has two main sections, the `pipeline` and `jobs`.
-Pipeline section should contains list of stages, and if certain stage should run automatically.
+Pipeline section should contain list of stages with information if certain stage should run automatically.
 Jobs section should contain list of jobs, containing list of commands required to complete each job.
 
 ```yml
@@ -19,7 +19,7 @@ pipeline:
     autorun: true
 
 jobs: 
-  - stage: first # name of stage this job belongs 
+  - stage: first # name of stage this job belongs to
     name: echo foo # name of this job
     deploy: # list of commands in this job
       - echo foo
@@ -34,5 +34,5 @@ jobs:
 
 ## Examples
 
-Example `.dick.yml` files are available on [examples](https://github.com/dick-the-deployer/examples) repository. 
+Example `.dick.yml` files are available in [examples](https://github.com/dick-the-deployer/examples) repository. 
 Please check different branches for different configuration options.

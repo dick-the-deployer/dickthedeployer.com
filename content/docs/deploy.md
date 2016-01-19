@@ -16,6 +16,8 @@ Once deployed, the script will output the URL to connect and command required to
 curl https://dickthedeployer.com/deploy | bash -s
 ```
 
+> Note: if you get an error "Cannot communicate securely with peer: no common encryption algorithm(s)." you need to specify algorithm manually `curl --ciphers ecdhe_ecdsa_aes_256_sha https://dickthedeployer.com/deploy | bash -s`
+
 
 For full usage details:
 ```bash
@@ -28,7 +30,7 @@ curl -s https://dickthedeployer.com/deploy | bash -s -- -h
   PORT: port to run web, default 8080
   WORKERS: this is the number of workers to create in deploy-workers action
   PREFIX: this is the prefix used by all Dick The Deployer components
-  DICK_WEB_ADDRESS: this is the Dick The Deployer Web addres used by workers to register in
+  DICK_WEB_ADDRESS: this is the Dick The Deployer Web address used by workers to register in
 ```
 
 > Note: all variables are optional.
@@ -45,14 +47,14 @@ This controls the action for the script. Available options are:
 
 * `deploy-web`: Deploy new Dick the Deployer instance
 * `upgrade-web`: Upgrade Dick the Deployer instance.
-* `remove-web`: Remove Dick the Deployer instance. (Some additional steps may be require, as printed by script)
-* `deploy-workers`: Deploy two Workers and links them to Web. `DICK_WEB_ADDRESS` is required.
+* `remove-web`: Remove Dick the Deployer instance. (Some additional steps may be required, as printed by script)
+* `deploy-workers`: Deploy two Workers and link them to Web. `DICK_WEB_ADDRESS` is required.
 * `upgrade-workers`: Upgrade each available Worker instance.
 * `remove-workers`: Remove each Worker instance.
 
 ### Version
 
-Version of Dick the Deployer container's pulled from registry.
+Version of Dick the Deployer container pulled from registry.
 
 ### PORT
 
