@@ -18,7 +18,7 @@ You can see what is current status of each pipeline, when the build was started,
 the last commit message and more. There is also several buttons allowing starting 
 pipeline manually, starting selected stage or restarting stage build.
 
-![Projects](/images/dashboard.png)
+![Projects](/images/dashboard1.png)
 
 ## Builds
 
@@ -26,14 +26,14 @@ The builds section provides history of pipelines for selected project. You can s
 any stage build of any pipeline run. There is also several information like commit message, build number 
 and when the build was started.
 
-![Projects](/images/builds.png)
+![Projects](/images/builds1.png)
 
 ## Build
 
 The build section provides summary for certain build. You can monitor build progress of every job in selected stage, 
 including build output in near real time.
 
-![Projects](/images/output.png)
+![Projects](/images/output1.png)
 
 
 ## Settings
@@ -41,11 +41,11 @@ including build output in near real time.
 The setting section provides several options for project management. You can edit ref, repository and environment variables.
 Using this section you can also rename, move or delete project.
 
-![Projects](/images/settings.png)
+![Projects](/images/settings1.png)
 
 ## Groups
 
 The groups section presents groups available in Dick the Deployer.
 
-![Projects](/images/groups.png)
+![Projects](/images/groups1.png)
 
