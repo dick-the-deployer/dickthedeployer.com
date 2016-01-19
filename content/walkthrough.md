@@ -14,17 +14,17 @@ The repository should contain `.dick.yml` file with the pipeline definition. You
 ## Projects
 
 The projects section provides a single view of all projects in the Dick the Deployer.
-You can see what is current status of each pipeline, when the build was started, 
-the last commit message and more. There is also several buttons allowing starting 
-pipeline manually, starting selected stage or restarting stage build.
+You can see what is the current status of each pipeline, when the build was started, 
+the last commit message and more. There are also several buttons allowing you to start 
+pipeline manually, start selected stage or restart stage build.
 
 ![Projects](/images/dashboard.png)
 
 ## Builds
 
 The builds section provides history of pipelines for selected project. You can start (or restart) 
-any stage build of any pipeline run. There is also several information like commit message, build number 
-and when the build was started.
+any stage build of any pipeline run. There is also information about commit message, build number 
+and time when the build was started.
 
 ![Projects](/images/builds.png)
 
