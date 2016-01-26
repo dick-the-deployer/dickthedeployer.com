@@ -1,4 +1,4 @@
-box: centos
+box: ubuntu
 build:
   steps:
     - arjen/hugo-build:
