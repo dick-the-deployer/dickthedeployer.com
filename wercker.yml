@@ -12,6 +12,9 @@ deploy:
         code: |-
           apt-get update  
           apt-get upgrade  
+          apt-get install -f
+    - install-packages:
+        packages: ssh-client git
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
         domain: dickthedeployer.com
