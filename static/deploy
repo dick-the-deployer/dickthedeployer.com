@@ -114,6 +114,7 @@ start_workers() {
             -ti \
             -d \
             --restart=always \
+            --volumes-from=$PREFIX-keygen \
             --name $PREFIX-worker-$i \
             -e dick.web.url=$DICK_WEB_ADDRESS \
             $WORKER_IMAGE:$DICK_VERSION)
