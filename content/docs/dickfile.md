@@ -14,13 +14,14 @@ Jobs section should contain list of jobs, containing list of commands required t
 pipeline:
   stages:
   - name: first # name of stage
-    autorun: true # if the stage should run automatically
+    autorun: true # if the stage should run automatically, default false
   - name: second
     autorun: true
 
 jobs: 
   - stage: first # name of stage this job belongs to
     name: echo foo # name of this job
+    requireRepository: true # if the job require sources from repository, default false
     deploy: # list of commands in this job
       - echo foo
     environmentVariables: # list of environment variables injected to each command in this job
