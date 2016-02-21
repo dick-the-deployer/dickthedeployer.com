@@ -1,4 +1,4 @@
-box: debian:8.2
+box: debian
 build:
   steps:
     - arjen/hugo-build:
