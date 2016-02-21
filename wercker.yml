@@ -1,4 +1,4 @@
-box: centos
+box: debian
 build:
   steps:
     - arjen/hugo-build:
@@ -8,7 +8,7 @@ build:
 deploy:
   steps:
     - install-packages:
-        packages: ssh-client git
+        packages: git
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
         domain: dickthedeployer.com
