@@ -113,6 +113,8 @@ start_workers() {
         ID=$(docker run \
             -ti \
             -d \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -v $(which docker):/bin/docker \
             --restart=always \
             --volumes-from=$PREFIX-keygen \
             --name $PREFIX-worker-$i \
