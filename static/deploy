@@ -113,6 +113,7 @@ start_workers() {
         ID=$(docker run \
             -ti \
             -d \
+            -v /tmp:/tmp \
             -v /var/run/docker.sock:/var/run/docker.sock \
             -v $(which docker):/bin/docker \
             --restart=always \
