@@ -1,4 +1,4 @@
-box: debian:wheezy
+box: centos
 build:
   steps:
     - arjen/hugo-build:
