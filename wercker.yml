@@ -1,4 +1,4 @@
-box: debian
+box: java:8
 build:
   steps:
     - arjen/hugo-build:
@@ -7,8 +7,6 @@ build:
         flags: --buildDrafts=true
 deploy:
   steps:
-    - install-packages:
-        packages: git
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
         domain: dickthedeployer.com
