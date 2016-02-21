@@ -10,7 +10,11 @@ The dickfile has two main sections, the `pipeline` and `jobs`.
 Pipeline section should contain list of stages with information if certain stage should run automatically.
 Jobs section should contain list of jobs, containing list of commands required to complete each job.
 
+> Please note that Dick Worker runs commands by bash inside docker container. Only containers with bash available will work.
+
 ```yml
+image: debian:latest
+
 pipeline:
   stages:
   - name: first # name of stage
