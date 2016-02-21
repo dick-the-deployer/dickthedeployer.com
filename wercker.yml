@@ -1,4 +1,4 @@
-box: debian:8.0
+box: debian:wheezy
 build:
   steps:
     - arjen/hugo-build:
