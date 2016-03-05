@@ -39,5 +39,5 @@ jobs:
 
 ## Examples
 
-Example `.dick.yml` files are available in [examples](https://github.com/dick-the-deployer/examples) repository. 
+Example `.deployer.yml` files are available in [examples](https://github.com/dick-the-deployer/examples) repository. 
 Please check different branches for different configuration options.
