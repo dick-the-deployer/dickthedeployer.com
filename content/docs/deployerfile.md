@@ -1,16 +1,16 @@
 +++
 date = "2015-11-22T20:11:22+01:00"
-title = "Dickfile"
+title = "Deployer File"
 +++
 
-The instructions how to build project should be stored in project repository in a `.dick.yml` file. This design choice 
+The instructions how to build project should be stored in project repository in a `.deployer.yml` file. This design choice
 allows configuration versioning and quick setup at the same time.
 
-The dickfile has two main sections, the `pipeline` and `jobs`.
+The deployer file has two main sections, the `pipeline` and `jobs`.
 Pipeline section should contain list of stages with information if certain stage should run automatically.
 Jobs section should contain list of jobs, containing list of commands required to complete each job.
 
-> Please note that Dick Worker runs commands by bash inside docker container. Only containers with bash available will work.
+> Please note that Dick the Deployer Worker runs commands by bash inside docker container. Only containers with bash available will work.
 
 ```yml
 image: debian:latest

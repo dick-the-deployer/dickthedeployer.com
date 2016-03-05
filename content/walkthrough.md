@@ -8,8 +8,8 @@ This is an overview of Dick the Deployer.
 ## Abstract
 
 Dick the Deployer organizes work in projects. Each project is based on certain repository and ref (for example `master`).
-The repository should contain `.dick.yml` file with the pipeline definition. You can read more about this file in 
-[dickfile](/docs/dickfile) section.
+The repository should contain `.deployer.yml` file with the pipeline definition. You can read more about this file in 
+[deployer file](/docs/deployerfile) section.
 
 ## Projects
 
