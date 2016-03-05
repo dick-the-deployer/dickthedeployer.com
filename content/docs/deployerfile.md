@@ -15,6 +15,10 @@ Jobs section should contain list of jobs, containing list of commands required t
 ```yml
 image: debian:latest
 
+variables: # list of environment variables injected to each command
+  - key: VERSION
+    value: 1.2.3
+    
 pipeline:
   stages:
   - name: first # name of stage
@@ -28,14 +32,23 @@ jobs:
     requireRepository: true # if the job require sources from repository, default false
     deploy: # list of commands in this job
       - echo foo
-    environmentVariables: # list of environment variables injected to each command in this job
-      - key: FOO
-        value: bar
   - stage: second
     name: echo bar
     deploy:
       - exit 1
 ```
+
+## Environment Variables Order
+
+There are several ways of providing environment variables to the job. Variables can be injected
+by setting them to configuration on Dick the Deployer Web, can be provided via `yml` file and 
+by setting them when triggering the job manually with options.
+
+Each conflict in variable names is resolved with priorities in descending order as follows:
+
+* most important are variables set manually (or via build hook),
+* then variables defined in `yml` file,
+* finally variables configured in project on Dick Web have lowest priority.
 
 ## Examples
 
