@@ -38,18 +38,6 @@ jobs:
       - exit 1
 ```
 
-## Environment Variables Order
-
-There are several ways of providing environment variables to the job. Variables can be injected
-by setting them to configuration on Dick the Deployer Web, can be provided via `yml` file and 
-by setting them when triggering the job manually with options.
-
-Each conflict in variable names is resolved with priorities in descending order as follows:
-
-* most important are variables set manually (or via build hook),
-* then variables defined in `yml` file,
-* finally variables configured in project on Dick Web have lowest priority.
-
 ## Examples
 
 Example `.deployer.yml` files are available in [examples](https://github.com/dick-the-deployer/examples) repository. 
