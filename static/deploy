@@ -167,7 +167,7 @@ if [ "$ACTION" = "deploy-web" ]; then
 
     echo "Dick The Deployer available at $DICK_WEB_PROTOCOL://$DICK_WEB_IP:$DICK_WEB_PORT"
     echo "You can now install workers running: "
-    echo " -> curl https://dickthedeployer.com/deploy | ACTION=deploy-workers DICK_WEB_ADDRESS=$DICK_WEB_PROTOCOL://$DICK_WEB_IP:$DICK_WEB_PORT bash -s"
+    echo " -> curl https://dick-the-deployer.github.io/deploy | ACTION=deploy-workers DICK_WEB_ADDRESS=$DICK_WEB_PROTOCOL://$DICK_WEB_IP:$DICK_WEB_PORT bash -s"
 
 elif [ "$ACTION" = "upgrade-web" ]; then
     set -e
