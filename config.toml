@@ -1,4 +1,4 @@
-baseurl = "https://dickthedeployer.com"
+baseurl = "https://dick-the-deployer.github.io"
 languageCode = "en-us"
 title = "Dick the Deployer"
 theme = "purehugo"
