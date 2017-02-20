@@ -13,15 +13,15 @@ Automated deployment will deploy Dick the Deployer using current Docker host.
 Once deployed, the script will output the URL to connect and command required to run some workers.
 
 ```bash
-curl https://dickthedeployer.com/deploy | bash -s
+curl https://dick-the-deployer.github.io/deploy | bash -s
 ```
 
-> Note: if you get an error "Cannot communicate securely with peer: no common encryption algorithm(s)." you need to specify algorithm manually `curl --ciphers ecdhe_ecdsa_aes_256_sha https://dickthedeployer.com/deploy | bash -s`
+> Note: if you get an error "Cannot communicate securely with peer: no common encryption algorithm(s)." you need to specify algorithm manually `curl --ciphers ecdhe_ecdsa_aes_256_sha https://dick-the-deployer.github.io/deploy | bash -s`
 
 
 For full usage details:
 ```bash
-curl -s https://dickthedeployer.com/deploy | bash -s -- -h
+curl -s https://dick-the-deployer.github.io/deploy | bash -s -- -h
 ```
 
 ```bash
