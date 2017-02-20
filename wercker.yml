@@ -9,6 +9,5 @@ deploy:
   steps:
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
-        domain: dickthedeployer.com
         basedir: public
         repo: dick-the-deployer/dick-the-deployer.github.io
